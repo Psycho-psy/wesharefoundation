@@ -417,88 +417,6 @@
   }
 
   /* ============================================================
-     BOARD OF DIRECTORS SECTION (NEW)
-     ============================================================ */
-  #board {
-    background: var(--paper);
-  }
-  .board-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-  }
-  .board-member {
-    background: var(--sand-50);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .board-member:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px -12px rgba(27, 58, 92, 0.25);
-  }
-  .member-photo {
-    height: 220px;
-    overflow: hidden;
-    background: var(--sand-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .member-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    filter: grayscale(20%);
-  }
-  .member-info {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex-grow: 1;
-  }
-  .member-info h4 {
-    font-family: var(--display);
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--navy-800);
-    margin: 0;
-  }
-  .member-role {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--rose-600);
-    font-weight: 500;
-  }
-  .member-info p {
-    font-size: 14px;
-    color: var(--ink-600);
-    line-height: 1.55;
-    margin: 8px 0 12px;
-    flex-grow: 1;
-  }
-  .member-contact {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--blue-500);
-    text-decoration: none;
-    transition: color .2s ease;
-  }
-  .member-contact:hover {
-    color: var(--rose-600);
-  }
-
-  /* ============================================================
      PROGRAMS SECTION
      ============================================================ */
   .programs-grid {
@@ -1060,7 +978,6 @@
     </a>
     <nav class="links">
       <a href="#mission">Mission</a>
-      <a href="#board">Board</a>
       <a href="#programs">Programs</a>
       <a href="#gallery">Gallery</a>
       <a href="#support">Support Us</a>
@@ -1075,7 +992,6 @@
   </div>
   <nav class="mobile-menu" id="mobile-menu">
     <a href="#mission">Mission</a>
-    <a href="#board">Board</a>
     <a href="#programs">Programs</a>
     <a href="#gallery">Gallery</a>
     <a href="#support">Support Us</a>
@@ -1134,98 +1050,6 @@
           <p>Practical support, school supplies, essentials and opportunity for young people and families working to get ahead.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= BOARD OF DIRECTORS ================= -->
-<section id="board">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Leadership</span>
-      <h2>Our Board of Directors.</h2>
-      <p>The people who guide We Share Foundation with wisdom, integrity and a deep commitment to the communities we serve.</p>
-    </div>
-    <div class="board-grid">
-
-      <!-- Member 1 -->
-      <div class="board-member">
-        <div class="member-photo">
-          <img src="member1.jpg" alt="Isaac Ansah">
-        </div>
-        <div class="member-info">
-          <h4>Isaac Ansah</h4>
-          <span class="member-role">Chairperson</span>
-          <p>A retired educator with over 30 years of experience in community development and child welfare advocacy. Ansah leads the Board with a heart for the aged and a passion for education.</p>
-          <a href="mailto:ansah@wesharefoundation.org" class="member-contact">✉ ansah@wesharefoundation.org</a>
-        </div>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="board-member">
-        <div class="member-photo">
-          <img src="member2.jpg" alt="Augustine Dompreh">
-        </div>
-        <div class="member-info">
-          <h4>Augustine Dompreh</h4>
-          <span class="member-role">Vice Chairperson</span>
-          <p>A financial analyst with 15 years of experience in the banking sector. Dompreh oversees our financial planning and sustainability initiatives, ensuring every cedi is used wisely.</p>
-          <a href="mailto:dompreh@wesharefoundation.org" class="member-contact">✉ dompreh@wesharefoundation.org</a>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="board-member">
-        <div class="member-photo">
-          <img src="member3.jpg" alt="Lewis Owusu">
-        </div>
-        <div class="member-info">
-          <h4>Lewis Owusu</h4>
-          <span class="member-role">Secretary</span>
-          <p>A medical doctor specialising in public health. Dr. Owusu brings a unique perspective on community health, leading our health outreach programs and volunteer training.</p>
-          <a href="mailto:owusu@wesharefoundation.org" class="member-contact">✉ owusu@wesharefoundation.org</a>
-        </div>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="board-member">
-        <div class="member-photo">
-          <img src="images/board/4.jpg" alt="Mr. Yaw Boateng">
-        </div>
-        <div class="member-info">
-          <h4>Mr. Yaw Boateng</h4>
-          <span class="member-role">Treasurer</span>
-          <p>An accountant with a strong background in non-profit finance. Yaw ensures that our records are transparent and that donations are directed exactly where they are needed most.</p>
-          <a href="mailto:treasurer@wesharefoundation.org" class="member-contact">✉ treasurer@wesharefoundation.org</a>
-        </div>
-      </div>
-
-      <!-- Member 5 -->
-      <div class="board-member">
-        <div class="member-photo">
-          <img src="images/board/5.jpg" alt="Ms. Abena Osei">
-        </div>
-        <div class="member-info">
-          <h4>Ms. Abena Osei</h4>
-          <span class="member-role">Board Member</span>
-          <p>A community organiser with deep roots in the Greater Accra Region. Abena focuses on grassroots partnerships and making sure our programs reflect the needs of real people on the ground.</p>
-          <a href="mailto:abena@wesharefoundation.org" class="member-contact">✉ abena@wesharefoundation.org</a>
-        </div>
-      </div>
-
-      <!-- Member 6 -->
-      <div class="board-member">
-        <div class="member-photo">
-          <img src="images/board/6.jpg" alt="Mr. Kofi Annan">
-        </div>
-        <div class="member-info">
-          <h4>Mr. Kofi Annan</h4>
-          <span class="member-role">Board Member</span>
-          <p>A social entrepreneur and founder of a local youth initiative. Kofi advises the Board on youth empowerment and the capacity-building arm of our foundation's mission.</p>
-          <a href="mailto:kofi@wesharefoundation.org" class="member-contact">✉ kofi@wesharefoundation.org</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1404,7 +1228,6 @@
         <div class="footer-col">
           <h5>Explore</h5>
           <a href="#mission">Mission</a>
-          <a href="#board">Board</a>
           <a href="#programs">Programs</a>
         </div>
         <div class="footer-col">
