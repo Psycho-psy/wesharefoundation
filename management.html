@@ -47,7 +47,7 @@
   .member .btn { margin-top:auto; align-self:flex-start; padding:8px 16px; font-size:13px; }
 
   /* Profile dialog */
-  dialog { border:none; border-radius:20px; padding:0; width:min(680px,92vw); background:var(--paper); color:var(--ink-900); }
+  dialog { border:none; border-radius:20px; padding:0; width:min(720px,92vw); max-height:90vh; background:var(--paper); color:var(--ink-900); }
   dialog::backdrop { background:rgba(16,30,48,.6); }
   .dlg-grid { display:grid; grid-template-columns:220px 1fr; }
   .dlg-grid .photo { aspect-ratio:auto; min-height:100%; }
@@ -55,6 +55,11 @@
   .dlg-body h3 { font-family:var(--display); font-size:26px; font-weight:500; color:var(--navy-800); margin:0 0 4px; }
   .dlg-body .role { color:var(--rose-700); font-weight:500; font-size:14px; margin-bottom:16px; }
   .dlg-body p { font-size:15px; line-height:1.65; color:var(--ink-600); margin:0 0 14px; }
+  .dlg-body p:empty { display:none; }
+  .dlg-body ul { margin:0 0 18px; padding-left:20px; font-size:14.5px; line-height:1.6; color:var(--ink-600); }
+  .dlg-body ul li { margin-bottom:6px; }
+  .dlg-body ul li::marker { color:var(--rose-600); }
+  .dlg-body ul:empty { display:none; }
   .dlg-body .contact { font-size:14px; color:var(--navy-800); margin-bottom:20px; }
   .dlg-close { float:right; }
 
@@ -104,6 +109,7 @@
       <h3 id="dlg-name"></h3>
       <div class="role" id="dlg-role"></div>
       <p id="dlg-bio"></p>
+      <ul id="dlg-duties"></ul>
       <div class="contact" id="dlg-contact"></div>
     </div>
   </div>
@@ -119,19 +125,31 @@
 <script>
   /* ===== EDIT THIS LIST: add, remove or change team members =====
      photo: put each image in the same folder as this file (e.g. member1.jpg).
-     If a photo is missing, the member's initials show instead. */
+     If a photo is missing, the member's initials show instead.
+     duties (optional): a list of bullet points shown under the bio. */
   const members = [
     { name: "Isaac Ansah", role: "Executive Director", photo: "member1.jpg",
       short: "Leads the foundation's vision and community partnerships.",
       bio: "Isaac Ansah is a Development Studies student at the University for Development Studies (UDS) and a field practitioner with 3 years of field experience through the UDS Third Trimester Field Practical Programme (TTFPP) in the Brong Ahafo Region. He is experienced in community mobilization, participatory research (PRA, FGD, KII) and data collection using KoboCollect, and is passionate about livelihoods and gender.",
+      duties: [],
       email: "info@wesharefoundation.org" },
     { name: "Augustine Dompreh", role: "Finance", photo: "member2.jpg",
       short: "Keeps our records transparent and our donations accountable.",
       bio: "Experienced NGO Accountant with proven expertise in full-cycle accounting for non-profit institutions. I ensure donor funds are accurately recorded, transparently reported, and fully compliant with donor requirements, and Ghana statutory regulations (GRA, Registrar General, Social Welfare).",
+      duties: [],
       email: "" },
     { name: "Lewis Owusu", role: "Programs & Administration", photo: "member3.jpg",
       short: "Plans and runs our outreach visits and supply drives.",
-      bio: "",
+      bio: "Lewis Owusu leads program planning and delivery at We Share Foundation, from workplans and field visits to monitoring and donor reporting. His responsibilities include:",
+      duties: [
+        "Developing and reviewing annual and quarterly program workplans",
+        "Coordinating the implementation of all portfolio projects",
+        "Organizing field visits, community engagements and partner meetings",
+        "Supporting proposal writing and concept notes",
+        "Collecting data from field officers and updating M&E tools",
+        "Tracking program indicators and progress against targets",
+        "Writing weekly, monthly and donor progress reports"
+      ],
       email: "" }
   ];
 
@@ -165,6 +183,13 @@
     document.getElementById('dlg-name').textContent = m.name;
     document.getElementById('dlg-role').textContent = m.role;
     document.getElementById('dlg-bio').textContent = m.bio;
+    const ul = document.getElementById('dlg-duties');
+    ul.innerHTML = '';
+    (m.duties || []).forEach(d => {
+      const li = document.createElement('li');
+      li.textContent = d;
+      ul.appendChild(li);
+    });
     document.getElementById('dlg-contact').innerHTML = m.email ? 'Email: <a href="mailto:' + m.email + '">' + m.email + '</a>' : '';
     dlg.showModal();
   });
